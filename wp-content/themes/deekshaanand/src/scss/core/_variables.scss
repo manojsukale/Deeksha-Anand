@@ -1,0 +1,46 @@
+// Primary Colors
+$themeColor: #19417e;
+
+// Secondary Colors
+$blackColor: #000000;
+
+$primaryGreycolor: #232323;
+$whiteColor: #ffffff;
+$offWhitecolor:#eeefea;
+$greyColor: #3b3b3b;
+$greyColor: #3b3b3b;
+$secondaryGreycolor: #3b3b3b;
+$blueColor: #20559A;
+$redColor: #ff0000;
+$lightBluecolor: #cad3e2;
+$lightSkyBluecolor:#d8e0eb;
+$darkGeencolor:#5C6E3F;
+
+// font family
+$fontFamily: 'Roboto';
+$ralewayFamily: 'Raleway';
+
+// background colors
+
+$primaryBackground :linear-gradient(92.86deg, #5F8AC7 0%, #5F8AC7 17.53%, #78A293 48.78%, #99C152 82%, #A6CE39 100%);
+$secondaryBackground: linear-gradient(90deg, #DBEBFD 0%, #EFF7D9 100%);
+$textBackground: linear-gradient(92.86deg, #5F8AC7 0%, #5F8AC7 17.53%, #78A293 48.78%, #99C152 82%, #A6CE39 100%);
+$imageOverlay:linear-gradient(90deg, #5F8AC7 -0.15%, #5F8AC7 14.85%, #78A293 42.85%, #99C152 81.85%, #A6CE39 99.85%);
+// Font weights
+$extraLight: 200;
+$light: 300;
+$normal: normal;
+$light: 300;
+$bold: bold;
+$medium: 500;
+$semiBold: 600;
+$mediumBold: 700;
+$extraBold: 800;
+$fontBlack: 900;
+
+// Mixins
+$baseSize: 16;
+
+@function size($target, $context: $baseSize) {
+	@return calc($target / $context) * 1em;
+}

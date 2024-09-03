@@ -1,0 +1,54 @@
+{
+	"name": "deekshaanand",
+	"version": "1.0.0",
+	"description": "deekshaanand",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "npx cross-env NODE_ENV=production webpack --mode production --watch",
+		"build": "npx cross-env NODE_ENV=production webpack --mode production",
+		"serve": "npm run build && npx http-server dist"
+	},
+	"author": {
+		"name": "deekshaanand"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.16.0",
+		"@babel/core": "^7.16.0",
+		"@babel/plugin-syntax-dynamic-import": "^7.8.3",
+		"@babel/preset-env": "^7.16.0",
+		"autoprefixer": "^10.4.0",
+		"babel-loader": "^9.1.2",
+		"clean-webpack-plugin": "^4.0.0",
+		"copy-webpack-plugin": "^11.0.0",
+		"cross-env": "^7.0.3",
+		"css-loader": "^6.5.0",
+		"css-mqpacker": "^7.0.0",
+		"cssnano": "^6.0.0",
+		"file-loader": "^6.2.0",
+		"html-webpack-plugin": "^5.5.0",
+		"image-webpack-loader": "^8.0.1",
+		"mini-css-extract-plugin": "^2.4.3",
+		"postcss": "^8.3.11",
+		"postcss-import": "^15.1.0",
+		"postcss-loader": "^7.2.4",
+		"postcss-preset-env": "^8.3.2",
+		"sass": "^1.62.0",
+		"sass-loader": "^13.2.2",
+		"style-loader": "^3.3.1",
+		"svg-url-loader": "^8.0.0",
+		"terser-webpack-plugin": "^5.2.4",
+		"url-loader": "^4.1.1",
+		"webpack": "^5.61.0",
+		"webpack-cli": "^5.0.1",
+		"webpack-dev-server": "^4.4.0"
+	},
+	"dependencies": {
+		"@popperjs/core": "^2.11.8",
+		"bootstrap": "^5.3.3",
+		"gsap": "^3.11.5"
+	},
+	"browserslist": [
+		"last 20 versions"
+	]
+}

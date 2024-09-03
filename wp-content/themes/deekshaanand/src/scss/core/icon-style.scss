@@ -1,0 +1,193 @@
+@import "./icon-variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?gjxe5k');
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?gjxe5k#iefix') format('embedded-opentype'),
+  url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?gjxe5k') format('truetype'),
+  url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?gjxe5k') format('woff'),
+  url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?gjxe5k##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="ds-"],
+[class*=" ds-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ds-whatsapp .path1 {
+  &:before {
+    content: $ds-whatsapp-path1;
+  }
+}
+
+.ds-whatsapp .path2 {
+  &:before {
+    content: $ds-whatsapp-path2;
+    margin-left: -1em;
+  }
+}
+
+.ds-whatsapp .path3 {
+  &:before {
+    content: $ds-whatsapp-path3;
+    margin-left: -1em;
+  }
+}
+
+.ds-whatsapp .path4 {
+  &:before {
+    content: $ds-whatsapp-path4;
+    margin-left: -1em;
+  }
+}
+
+.ds-tiktok .path1 {
+  &:before {
+    content: $ds-tiktok-path1;
+  }
+}
+
+.ds-tiktok .path2 {
+  &:before {
+    content: $ds-tiktok-path2;
+    margin-left: -1em;
+  }
+}
+
+.ds-youtube .path1 {
+  &:before {
+    content: $ds-youtube-path1;
+  }
+}
+
+.ds-youtube .path2 {
+  &:before {
+    content: $ds-youtube-path2;
+    margin-left: -1em;
+  }
+}
+
+.ds-youtube .path3 {
+  &:before {
+    content: $ds-youtube-path3;
+    margin-left: -1em;
+  }
+}
+
+.ds-insta .path1 {
+  &:before {
+    content: $ds-insta-path1;
+  }
+}
+
+.ds-insta .path2 {
+  &:before {
+    content: $ds-insta-path2;
+    margin-left: -1em;
+  }
+}
+
+.ds-insta .path3 {
+  &:before {
+    content: $ds-insta-path3;
+    margin-left: -1em;
+  }
+}
+
+.ds-insta .path4 {
+  &:before {
+    content: $ds-insta-path4;
+    margin-left: -1em;
+  }
+}
+
+.ds-insta .path5 {
+  &:before {
+    content: $ds-insta-path5;
+    margin-left: -1em;
+  }
+}
+
+.ds-insta .path6 {
+  &:before {
+    content: $ds-insta-path6;
+    margin-left: -1em;
+  }
+}
+
+.ds-twitter .path1 {
+  &:before {
+    content: $ds-twitter-path1;
+  }
+}
+
+.ds-twitter .path2 {
+  &:before {
+    content: $ds-twitter-path2;
+    margin-left: -1em;
+  }
+}
+
+.ds-twitter .path3 {
+  &:before {
+    content: $ds-twitter-path3;
+    margin-left: -1em;
+  }
+}
+
+.ds-facebook .path1 {
+  &:before {
+    content: $ds-facebook-path1;
+  }
+}
+
+.ds-facebook .path2 {
+  &:before {
+    content: $ds-facebook-path2;
+    margin-left: -1em;
+  }
+}
+
+.ds-plus {
+  &:before {
+    content: $ds-plus;
+  }
+}
+
+.ds-minus {
+  &:before {
+    content: $ds-minus;
+  }
+}
+
+.ds-left-arrow {
+  &:before {
+    content: $ds-left-arrow;
+  }
+}
+
+.ds-right-arrow {
+  &:before {
+    content: $ds-right-arrow;
+  }
+}
+
+.ds-phone {
+  &:before {
+    content: $ds-phone;
+  }
+}

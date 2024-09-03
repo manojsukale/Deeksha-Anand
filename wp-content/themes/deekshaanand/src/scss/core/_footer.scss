@@ -1,0 +1,112 @@
+footer {
+    background-color: $lightBluecolor;
+    border-bottom: 6px solid $themeColor;
+    padding: 20px 0;
+}
+
+.footer {
+    &.contact--info {
+        margin: 0 auto;
+        max-width: fit-content;
+
+        li {
+            font-size: size(14);
+        }
+    }
+
+    &--wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 1024px) {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .logo {
+            @media only screen and (max-width: 550px) {
+                flex-direction: row;
+                align-items: center;
+                gap: unset;
+            }
+        }
+
+        .logo--text {
+            border-right: 0;
+        }
+    }
+
+    &--content {
+        padding: 0 20px;
+        border-right: 1px solid $themeColor;
+        border-left: 1px solid $themeColor;
+
+        @media only screen and (max-width: 1024px) {
+            border: 0;
+            text-align: center;
+        }
+
+        .copyrights {
+            font-size: size(14);
+            font-weight: $normal;
+            line-height: normal;
+            margin-bottom: 5px;
+        }
+
+    }
+
+    &--menu {
+        display: flex;
+        margin-bottom: 5px;
+
+        @media only screen and (max-width: 1024px) {
+            margin-top: 10px;
+        }
+
+        @media only screen and (max-width: 550px) {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        li {
+            margin-right: 10px;
+
+            @media only screen and (max-width: 1024px) {
+                margin-right: 20px;
+            }
+
+            a {
+                font-size: size(14);
+                font-weight: $normal;
+            }
+        }
+    }
+
+    &--social {
+        margin-left: 30px;
+
+        @media only screen and (max-width: 1024px) {
+            margin-left: 0;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            display: flex;
+
+            li {
+                margin-right: 15px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                a {
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
