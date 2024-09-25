@@ -11,7 +11,8 @@
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
-
+$contact_number = get_field('contact_number', 'option');
+$contact_email = get_field('contact_email', 'option');
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?> <?php twentytwentyone_the_html_classes(); ?>>
@@ -20,6 +21,28 @@
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php wp_head(); ?>
+	<script>
+		function initMap() {
+			// Create a map centered at a specific location
+			var map = new google.maps.Map(document.getElementById('deeksha-map'), {
+				zoom: 8,
+				center: {
+					lat: 51.062171936035156,
+					lng: -114.06295776367188
+				} // Coordinates of Delhi, India
+			});
+
+			// Add a marker at the center location
+			var marker = new google.maps.Marker({
+				position: {
+					lat: 51.062171936035156,
+					lng: -114.06295776367188
+				},
+				map: map,
+				title: 'Hello Delhi!'
+			});
+		}
+	</script>
 </head>
 
 <body <?php ((!is_front_page()) ? body_class('nothomepage ' . $post->post_name) : body_class()) ?>>
@@ -64,8 +87,8 @@
 						?>
 					</div>
 					<ul class="contact--info">
-						<li class="contact-link"><a href="tel:8255615003"><span class="phone-icon ds-phone"></span> 825-561-5003</a></li>
-						<li class="contact-link"><a href="mailto:info@damortgages.ca">info@damortgages.ca</a></li>
+						<li class="contact-link"><a href="tel:<?php echo $contact_number ?>"><span class="phone-icon ds-phone"></span> <?php echo $contact_number ?></a></li>
+						<li class="contact-link"><a href="mailto:<?php echo $contact_email ?>"><?php echo $contact_email ?></a></li>
 					</ul>
 				</div>
 				<div class="nav--hamburger">

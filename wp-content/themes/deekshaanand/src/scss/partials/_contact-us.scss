@@ -1,0 +1,220 @@
+.contactUs {
+    &--main {
+        &-wraper {
+            padding: 100px 0;
+            background: #f0f0ee;
+        }
+    }
+
+    &-image {
+        width: 50%;
+
+        @media screen and (max-width:768px) {
+            display: none;
+        }
+    }
+
+    &--inner {
+        &-wraper {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &--form {
+        padding: 40px 48px 48px 48px;
+        border-radius: 32px;
+        border: 1px solid #CDD5DF;
+        background: linear-gradient(93deg, rgba(95, 138, 199, 0.20) 0%, rgba(95, 138, 199, 0.20) 17.53%, rgba(120, 162, 147, 0.20) 48.78%, rgba(153, 193, 82, 0.20) 82%, rgba(166, 206, 57, 0.20) 100%);
+        max-width: 515px;
+
+        @media screen and (max-width:768px) {
+            max-width: 100%;
+        }
+
+        @media screen and (max-width:550px) {
+            padding: 30px;
+        }
+
+        .heading-s {
+            font-family: $ralewayFamily;
+            color: #202939;
+            font-size: size(28);
+            font-weight: $semiBold;
+            line-height: 36px;
+            margin-bottom: 4px;
+        }
+
+        .note-text {
+            margin-bottom: 24px;
+            font-family: $ralewayFamily;
+
+        }
+
+        .form-row {
+            margin-bottom: 16px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            p {
+                line-height: normal;
+
+                br {
+                    display: none;
+                }
+            }
+
+            label {
+                font-family: $ralewayFamily;
+                display: block;
+                text-align: left;
+                font-size: 12px;
+                font-weight: $semiBold;
+                line-height: 18px;
+                margin-bottom: 7px;
+            }
+
+            .wpcf7-form-control-wrap {
+                padding: 10px 14px;
+                border-radius: 8px;
+                border: 1px solid #CDD5DF;
+                background: $whiteColor;
+                box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+                display: block;
+                position: relative;
+
+                input {
+                    appearance: none;
+                    border: 0;
+                    width: 100%;
+                    font-size: 14px;
+                    font-weight: $normal;
+                    line-height: 20px;
+                    letter-spacing: -0.14px;
+                    padding-bottom: 0 !important;
+                    padding-top: 0 !important;
+                }
+
+                textarea {
+                    height: 100px;
+                    border: 0;
+                    width: 100%;
+                }
+
+                .wpcf7-not-valid-tip {
+                    position: absolute;
+                    font-size: 12px;
+                    position: absolute;
+                    bottom: -16px;
+                    left: 0;
+                }
+            }
+
+            &.submit-btn {
+                margin-top: 30px;
+                input {
+                    font-family: $ralewayFamily;
+                    background: $themeColor;
+                    color: $whiteColor;
+                    font-weight: $semiBold;
+                    line-height: 24px;
+                    display: block;
+                    padding: 13px 22.5px;
+                    border: 0;
+                    width: 100%;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+
+    &--wrapper {
+        padding: 100px 0;
+    }
+
+    &--content {
+        .reach-text {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .heading-text {
+            font-size: size(36);
+            line-height: 44px;
+            letter-spacing: -0.72px;
+        }
+
+        p {}
+    }
+
+    &--inner {
+        @media screen and (max-width:768px) {
+            flex-direction: column;
+        }
+    }
+
+    &--contact {
+        max-width: 505px;
+        margin-top: 48px;
+
+        @media screen and (max-width:768px) {
+            max-width: 100%;
+        }
+
+        .info-wrap {
+            margin-bottom: 48px;
+
+            &:last-child {
+                margin-bottom: 48px;
+            }
+
+            .icon {
+                width: 48px;
+                height: 48px;
+            }
+
+            .content {
+                margin-left: 16px;
+                width: calc(100% - 48px);
+                color: $primaryGreycolor;
+
+                .small-text {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                    display: inline-block;
+                }
+
+                a {
+                    font-size: 18px;
+                    display: block;
+                }
+            }
+
+            &.address {
+                .para-text {
+                    br {
+                        @media screen and (max-width:550px) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-form-box {
+    display: block;
+    margin: 0;
+    padding-left: 13px;
+    text-align: left;
+
+    @media screen and (max-width:768px) {
+        padding-left: 0;
+        width: 100%;
+    }
+}

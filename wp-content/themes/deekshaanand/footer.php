@@ -11,6 +11,9 @@
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
+$contact_number = get_field('contact_number', 'option');
+$contact_email = get_field('contact_email', 'option');
+$footer_text = get_field('footer_text', 'option');
 
 ?>
 
@@ -24,19 +27,9 @@
                     <span class="text-two">Mortgage Broker</span>
                 </div>
             </a>
-            <!-- <div class="footer--content">
-                <p class="copyrights">© 2024 Deeksha Anand, The Mortgage Broker in Calgary, Alberta, Canada</p>
-                <ul class="footer--menu">
-                    <li class="nav-link"><a href="#">About</a></li>
-                    <li class="nav-link"><a href="#">Home Purchase</a></li>
-                    <li class="nav-link"><a href="#">Refinance</a></li>
-                    <li class="nav-link"><a href="#">Mortgage Renewal</a></li>
-                    <li class="nav-link"><a href="#">Mortgage Pre-Approval</a></li>
-                </ul>
 
-            </div> -->
             <div class="footer--content">
-                <p class="copyrights">© <?php echo date('Y'); ?> Deeksha Anand, The Mortgage Broker in Calgary, Alberta, Canada</p>
+                <p class="copyrights">© <?php echo date('Y'); ?> <?php echo $footer_text ?></p>
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'footer-menu',
@@ -48,37 +41,28 @@
             </div>
             <div class="footer--social">
                 <ul>
-                    <li>
-                        <a href="#" class="icon"><img src="<?php echo get_template_directory_uri(); ?>/src/images/whatsapp-icon.png" alt="whatsapp"></a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon"><img src="<?php echo get_template_directory_uri(); ?>/src/images/tiktok.png" alt="tiktok"></a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon"><img src="<?php echo get_template_directory_uri(); ?>/src/images/youtube-icon.png" alt="youtube"></a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon"><img src="<?php echo get_template_directory_uri(); ?>/src/images/insta-icon.png" alt="insta"></a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon"><img src="<?php echo get_template_directory_uri(); ?>/src/images/x-icon.png" alt="twitter"></a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon"><img src="<?php echo get_template_directory_uri(); ?>/src/images/facebook-icon.png" alt="facebook"></a>
-                    </li>
+                    <?php if (have_rows('social_media', 'option')): // 'option' to make it global 
+                    ?>
+                        <?php while (have_rows('social_media', 'option')): the_row(); ?>
+                            <li>
+                                <a href="<?php the_sub_field('social_link'); ?>" class="icon">
+                                    <img src="<?php the_sub_field('social_icon'); ?>" alt="<?php echo ('social_icon') ?>">
+                                </a>
+                            </li>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </ul>
             </div>
+
         </div>
-        <ul class="footer contact--info">
-            <li class="contact-link"><a href="8255615003"><span class="phone-icon ds-phone"></span> 825-561-5003</a></li>
-            <li class="contact-link"><a href="mailto:info@damortgages.ca">info@damortgages.ca</a></li>
-        </ul>
     </div>
 </footer>
 
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA33qlIMuw9VjZrVAy7tBxTvqvk0oVgisU&callback=console.debug&libraries=maps,marker&v=beta" async defer></script>
+
 
 </body>
 

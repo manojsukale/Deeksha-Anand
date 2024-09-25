@@ -466,6 +466,12 @@
             max-width: 900px;
             border-radius: 5px;
             overflow: hidden;
+
+            iframe {
+                width: 100%;
+                height: 607px;
+                border: 10px solid $whiteColor;
+            }
         }
 
         &-wrapper {
@@ -489,6 +495,10 @@
                     padding: 15px 30px;
 
                 }
+
+                @media only screen and (max-width: 550px) {
+                    padding: 15px;
+                }
             }
 
             .map-profile {
@@ -511,6 +521,7 @@
 
                     @media only screen and (max-width: 768px) {
                         font-size: size(16);
+                        line-height:1.5;
                     }
                 }
             }
@@ -533,6 +544,7 @@
 
                     @media only screen and (max-width: 768px) {
                         font-size: size(16);
+                        line-height:1.5;
                     }
                 }
             }

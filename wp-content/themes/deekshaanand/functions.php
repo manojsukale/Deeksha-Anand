@@ -697,15 +697,133 @@ if (! function_exists('wp_get_list_item_separator')) :
 endif;
 
 
-function display_contact_info()
-{
-	$phone = get_field('phone_number', 'option');
-	$email = get_field('email', 'option');
 
-	if ($phone && $email) {
-		echo '<ul class="contact--info">';
-		echo '<li class="contact-link"><a href="tel:' . $phone . '"><span class="phone-icon ds-phone"></span> ' . $phone . '</a></li>';
-		echo '<li class="contact-link"><a href="mailto:' . $email . '">' . $email . '</a></li>';
-		echo '</ul>';
-	}
+// 1. First, we check if the ACF plugin is active and the function exists
+if (function_exists('acf_add_options_page')) {
+
+	// 2. Create the options page
+	acf_add_options_page(array(
+		'page_title'    => 'Contact Details', // Title displayed at the top of the options page
+		'menu_title'    => 'Contact Details', // Label displayed in the WordPress admin menu
+		'menu_slug'     => 'contact-details-settings', // The URL slug used to uniquely identify this options page
+		'capability'    => 'edit_posts', // The user capability required to view this page
+		'redirect'      => false // Don't redirect to another page
+	));
+}
+
+// 3. Define and register the custom fields
+function my_acf_init()
+{
+	if (function_exists('acf_add_local_field_group')):
+
+		acf_add_local_field_group(array(
+			'key' => 'group_contact_details',
+			'title' => 'Global Contact Details',
+			'fields' => array(
+				array(
+					'key' => 'field_contact_number',
+					'label' => 'Contact Number',
+					'name' => 'contact_number',
+					'type' => 'text',
+				),
+				array(
+					'key' => 'field_contact_email',
+					'label' => 'Contact Email',
+					'name' => 'contact_email',
+					'type' => 'email',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'contact-details-settings',
+					),
+				),
+			),
+		));
+
+	endif;
+}
+
+// 4. Hook our function to the ACF initialization
+add_action('acf/init', 'my_acf_init');
+// --------------------------------------------------------------------------------
+// 2. map acf plugin
+if (function_exists('acf_add_options_page')) {
+
+	// 2.1. Create the options page
+	acf_add_options_page(array(
+		'page_title'    => 'Map Details', // Title displayed at the top of the options page
+		'menu_title'    => 'Map Details', // Label displayed in the WordPress admin menu
+		'menu_slug'     => 'map-details-settings', // The URL slug used to uniquely identify this options page
+		'capability'    => 'edit_posts', // The user capability required to view this page
+		'redirect'      => false // Don't redirect to another page
+	));
+}
+
+// 2.2. Define and register the custom fields
+function map_acf_init()
+{
+	if (function_exists('acf_add_local_field_group')):
+
+		acf_add_local_field_group(array(
+			'key' => 'map_details',
+			'title' => 'Global Details',
+			'fields' => array(
+				array(
+					'key' => 'field_map_url',
+					'label' => 'Map url',
+					'name' => 'map_url',
+					'type' => 'link',
+				),
+				array(
+					'key' => 'field_own_name',
+					'label' => 'Own Name',
+					'name' => 'own_name',
+					'type' => 'name',
+				),
+				array(
+					'key' => 'field_own_address',
+					'label' => 'Own Address',
+					'name' => 'own_address',
+					'type' => 'name',
+				),
+				array(
+					'key' => 'field_come_say',
+					'label' => 'Come Say',
+					'name' => 'come_say',
+					'type' => 'name',
+				),
+				array(
+					'key' => 'field_come_say_address',
+					'label' => 'Come Say Address',
+					'name' => 'come_say_address',
+					'type' => 'name',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'map_details-settings',
+					),
+				),
+			),
+		));
+
+	endif;
+}
+add_action('acf/init', 'map_acf_init');
+
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
+		'page_title' => 'Footer',
+		'menu_title' => 'Footer',
+		'menu_slug'  => 'footer',
+		'capability' => 'edit_posts',
+		'redirect'   => false
+	));
 }
